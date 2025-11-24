@@ -7885,10 +7885,13 @@ def handle_mypoke_back(update: Update, context: CallbackContext, user_id):
 
 def main():
     if KEEP_ALIVE_AVAILABLE:
-        if not start_keep_alive():
-            print("Warning: Could not start keep-alive server")
+        print("🌐 Starting keep-alive server...")
+        if start_keep_alive():
+            print("✅ Keep-alive server started")
+        else:
+            print("❌ Failed to start keep-alive server")
     else:
-        print("Keep-alive server not available, running bot only")
+        print("ℹ️ Keep-alive server not available")
     if not ensure_single_instance():
         sys.exit(1)
 
@@ -8041,4 +8044,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
