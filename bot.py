@@ -36,6 +36,14 @@ import logging
 from typing import Optional
 
 
+# Import keep_alive at the top
+try:
+    from keep_alive import start_keep_alive
+    KEEP_ALIVE_AVAILABLE = True
+except ImportError as e:
+    print(f"Keep alive module not available: {e}")
+    KEEP_ALIVE_AVAILABLE = False
+
 def debug_log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{timestamp}] DEBUG: {message}")
@@ -7876,8 +7884,11 @@ def handle_mypoke_back(update: Update, context: CallbackContext, user_id):
 
 
 def main():
-    if not start_keep_alive():
-        print("Warning: Could not start keep-alive server")
+    if KEEP_ALIVE_AVAILABLE:
+        if not start_keep_alive():
+            print("Warning: Could not start keep-alive server")
+    else:
+        print("Keep-alive server not available, running bot only")
     if not ensure_single_instance():
         sys.exit(1)
 
