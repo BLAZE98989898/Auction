@@ -552,6 +552,7 @@ def set_bot_commands(updater):
         BotCommand('topbuyers', 'View Top buyers'),
         BotCommand('profile', 'View your Profile'),
         BotCommand('cancel', 'Cancel adding item'),
+        BotCommand('mypoke', 'Cancel adding item'),
     ]
 
     # Admin commands (admin-only commands)
@@ -624,6 +625,7 @@ def show_help(update: Update, context: CallbackContext):
             "/topbuyers - View Top Buyers",
             "/profile - View your profile",
             "/cancel - Cancel adding item",
+            "/mypoke - see your sold and bought items"
             "",
             "🔐 <b>Admin Commands:</b>",
             "/verify - Verify users",
@@ -680,6 +682,7 @@ def show_help(update: Update, context: CallbackContext):
             "/topbuyers - View Top Buyers",
             "/profile - View your profile",
             "/cancel - Cancel adding item",
+            "/mypoke - see your sold and bought items"
             "",
             "💡 <b>Need Help?</b>",
             "If you need assistance or want to report an issue,",
@@ -8043,6 +8046,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
