@@ -7884,12 +7884,11 @@ def handle_mypoke_back(update: Update, context: CallbackContext, user_id):
 
 
 def main():
+
+    print("🚀 Starting Pokemon Auction Bot in Docker...")
+    print(f"📦 Python version: {sys.version}")
     if KEEP_ALIVE_AVAILABLE:
-        print("🌐 Starting keep-alive server...")
-        if start_keep_alive():
-            print("✅ Keep-alive server started")
-        else:
-            print("❌ Failed to start keep-alive server")
+        start_keep_alive()
     else:
         print("ℹ️ Keep-alive server not available")
     if not ensure_single_instance():
@@ -8044,5 +8043,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
