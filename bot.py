@@ -418,10 +418,10 @@ load_dotenv("auc.env")
 TOKEN = os.getenv("BOT_TOKEN")
 ADMINS = load_admins()
 #ADMINS = [int(admin_id) for admin_id in os.getenv("ADMIN_IDS").split(",") if admin_id]
-CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003321180638"))
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@sjsjwhabb")
-DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003333433940"))
-LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003333433940"))
+CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003096501484"))
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@pokesforsell")
+DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003096501484"))
+LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003366158152"))
 
 def ensure_single_instance():
     """
@@ -8046,6 +8046,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
