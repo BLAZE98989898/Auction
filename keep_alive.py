@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Keep Alive Script for Telegram Bot Deployment on Render
-This script creates a simple web server to keep the bot alive and handle webhook if needed
+This script creates a simple web server to keep the bot alive
 """
 
 import os
 import threading
 import time
 import logging
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 import requests
 
 # Set up logging
@@ -58,13 +58,6 @@ def status():
     """Status endpoint showing detailed bot information"""
     bot_status["uptime"] = time.time() - bot_status["start_time"]
     return jsonify(bot_status)
-
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    """Webhook endpoint for Telegram (if using webhook instead of polling)"""
-    # If you decide to use webhooks instead of polling in the future
-    # You can implement the webhook handler here
-    return jsonify({"status": "webhook_received"})
 
 @app.route('/restart', methods=['POST'])
 def restart():
